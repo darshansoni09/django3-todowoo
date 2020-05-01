@@ -123,3 +123,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 LOGIN_URL = '/login'
+
+try:
+    from .local_settings import *
+except ImportError:
+    print("Looks like no local files. You must be on production")
